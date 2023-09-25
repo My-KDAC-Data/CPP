@@ -1,33 +1,32 @@
 /*
-Write a menu driven program for Student in CPP language. Create a class student with data
-members roll no, name and marks. Implement the following functions
-void initStudent();
-void printStudentOnConsole();
-void acceptStudentFromConsole();
+Create a namespace NStudent. Create the Student class(created as per assignment-1 Q3) inside
+namespace. Test the functionalities
 */
 
 #include<iostream>
 using namespace std;
 
-class Student
+namespace Nstudent
 {
-    private:
+    class Student
+    {
+        private:
 
-    int rollNo;
-    string name;
-    int marks;
+        int rollNo;
+        string name;
+        int marks;
 
-    public:
+        public:
 
-    void initStudent()
+      void initStudent()
     {
         cout<<"Student Details:"<<endl;
         this->rollNo=01;
         this->name="Shubham";
         this->marks=90;
-        cout<<rollNo<<endl;
-        cout<<name<<endl;
-        cout<<marks<<endl;
+        cout<<this->rollNo<<endl;
+        cout<<this->name<<endl;
+        cout<<this->marks<<endl;
           
     }
 
@@ -43,25 +42,27 @@ class Student
     void printStudentOnConsole()
     {
         cout<<"The Student Details are:"<<endl;
-        cout<<"Roll no="<<rollNo<<endl;
-        cout<<"Name="<<name<<endl;
-        cout<<"Marks="<<marks<<endl;
+        cout<<"Roll no="<<this->rollNo<<endl;
+        cout<<"Name="<<this->name<<endl;
+        cout<<"Marks="<<this->marks<<endl;
     }
     
-};
+  };
+
+}
 
 int main()
 {
     int choice;
-    Student s1;
+    Nstudent::Student s1;
 
     do
-    {
+    { 
         cout<<"1.Print Defult Details of Student\n2.Accept the details of student\n3.Display the details of student\n4.Exit\n"<<endl;
         cout<<"Enter your choice=";
         cin>>choice;
 
-        switch(choice)
+         switch(choice)
         {
             case 1:
                     s1.initStudent();
@@ -76,10 +77,8 @@ int main()
                     break;
         }
 
-    }  while(choice != 5); 
-    
-   cout<<"Thanks for using our app to see student details..."<<endl;
-   
-   
+    }while(choice != 5);
+
+
     return 0;
 }
